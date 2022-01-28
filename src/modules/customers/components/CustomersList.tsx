@@ -3,19 +3,6 @@ import Sidebar from "./Sidebar";
 import CustomerCard from "./CustomerCard";
 import * as _ from "lodash";
 
-const classes = {
-    root: {
-        display: 'inline-flex',
-        width: '100%'
-    },
-    sidebar: {
-        width: '20%',
-    },
-    list: {
-        width: '70%'
-    }
-};
-
 interface ICustomer {
     id: number,
     login: string,
@@ -46,16 +33,18 @@ const CustomersList = () => {
     };
 
     return (
-        <div style={classes.root}>
-            <div style={classes.sidebar}>
+        <div className="row">
+            <div className="col-md-4">
                 <Sidebar sort={sort}/>
             </div>
-            <div style={classes.list}>
-                {
-                    customers.map((customer: ICustomer) => {
-                        return <CustomerCard customer={customer} key={customer.id}/>
-                    })
-                }
+            <div className="col-md-8">
+                <div className="row">
+                    {
+                        customers.map((customer: ICustomer) => {
+                            return <CustomerCard customer={customer} key={customer.id}/>
+                        })
+                    }
+                </div>
             </div>
         </div>
     );

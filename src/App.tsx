@@ -3,7 +3,7 @@ import CustomersList from "./modules/customers";
 
 function App() {
   return (
-    <div className="wrapper">
+    <div className="container wrapper">
         <CustomersList />
     </div>
   );

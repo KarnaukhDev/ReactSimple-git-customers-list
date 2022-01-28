@@ -1,14 +1,6 @@
 import React from 'react';
 
 const classes = {
-    root: {
-        display: 'inline-flex',
-        marginTop: '10px',
-        width: '50%'
-    },
-    card: {
-        margin: '5px'
-    },
     avatar: {
         width: '150px',
         margin: '5px',
@@ -27,14 +19,20 @@ interface IProps {
 
 const CustomerCard = ({customer}: IProps) => {
     return (
-        <div style={classes.root}>
-            <div style={classes.card}>
-                <img src={customer.avatar_url} style={classes.avatar}/>
-            </div>
-            <div style={classes.card}>
-                <p>{customer.id}</p>
-                <p>{customer.login}</p>
-                <span><a href={customer.repos_url}>Repos</a></span>
+        <div className="col-md-6">
+            <div className="row">
+                <div className="col-md-6">
+                    <div>
+                        <img src={customer.avatar_url} style={classes.avatar}/>
+                    </div>
+                </div>
+                <div className="col-md-6">
+                    <div>
+                        <p>Id: {customer.id}</p>
+                        <p>Login: {customer.login}</p>
+                        <span>Repos <a href={customer.repos_url}>link</a></span>
+                    </div>
+                </div>
             </div>
         </div>
     );
